@@ -40,7 +40,7 @@ Viene del template oficial [`salazarsebas/stellar-build-toolkit`](https://github
 
 ## Cómo se usa
 
-Las skills se activan solas en [Claude Code](https://claude.com/claude-code) según lo que pidas. Para ver el catálogo completo desde adentro del proyecto:
+Las skills se activan según lo que pida. Para ver el catálogo completo desde adentro del proyecto:
 
 ```
 /navigate-skills
@@ -48,7 +48,7 @@ Las skills se activan solas en [Claude Code](https://claude.com/claude-code) seg
 
 ## Licencia
 
-El contenido de `.claude/skills/` viene del template y pertenece a sus autores. El código de mi proyecto llevará su propia licencia cuando exista.
+El código de mi proyecto llevará su propia licencia cuando exista.
 
 ---
 
