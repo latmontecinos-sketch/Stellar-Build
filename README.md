@@ -2,9 +2,20 @@
 
 Repositorio base de mi proyecto para **Stellar Elite Bolivia**.
 
-Viene del template oficial [`salazarsebas/stellar-build-toolkit`](https://github.com/salazarsebas/stellar-build-toolkit), generado desde [stellarbuild.acachete.xyz](https://stellarbuild.acachete.xyz). Todavía no hay código de aplicación: por ahora esto es el **toolkit de skills** con el que voy a construir durante el programa.
+Viene del template oficial [`salazarsebas/stellar-build-toolkit`](https://github.com/salazarsebas/stellar-build-toolkit), generado desde [stellarbuild.acachete.xyz](https://stellarbuild.acachete.xyz): el **toolkit de skills** con el que construyo durante el programa, más los contratos que voy escribiendo.
 
-## Qué hay acá
+## Contratos
+
+| Contrato | Track | Estado |
+|---|---|---|
+| [`aex-prueba-pass-stellar-01`](contracts/aex-prueba-pass-stellar-01) | Event Pass: pase de acceso a un Meet, comprado una vez y usado una vez | Desplegado en testnet |
+
+```bash
+cargo test              # tests de todos los contratos
+stellar contract build  # WASM en target/wasm32v1-none/release/
+```
+
+## Skills
 
 `.claude/skills/` — 34 skills para Claude Code, más `SKILL_ROUTER.md` que decide cuál usar en cada momento.
 
