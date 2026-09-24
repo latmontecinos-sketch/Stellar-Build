@@ -47,6 +47,8 @@ cargo test
 stellar contract build
 ```
 
-Los tests cubren la compra (incluido el árbol de firmas: el comprador autoriza `buy` y el `transfer` interno), la doble compra, el check-in único, el check-in sin pase, el check-in sin firma del anfitrión y el precio inválido.
+Los 14 tests cubren la compra (árbol de firmas exacto, evento `bought`, TTL, doble compra, compra a nombre de otro y pago fallido), el check-in (uso único, evento `checked_in`, sin pase, sin firma y firmado por el comprador) y los precios `0` y negativos.
+
+> La fuente principal de este contrato es [latmontecinos-sketch/aex-pass](https://github.com/latmontecinos-sketch/aex-pass): este directorio es una copia para el workspace del programa y tiene que mantenerse igual.
 
 El paso a paso para grabar la demo está en [DEMO.md](DEMO.md).

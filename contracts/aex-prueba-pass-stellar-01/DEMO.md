@@ -43,7 +43,7 @@ Resultados esperados, en orden: `"Aex Prueba Pass Stellar 01"` · `null` · éxi
 ## Guion
 
 **0:00–0:25 · Presentación**
-> Soy Alejandro Montecinos, de Stellar Elite Bolivia. Estoy construyendo Pollar Pass, un sistema de entradas sobre Stellar. Para este entregable llevé su regla central a un contrato Soroban, en el track Event Pass: **Aex Prueba Pass Stellar 01**, un pase para entrar a un Meet.
+> Soy Alejandro Montecinos, de Stellar Elite Bolivia. Para este entregable escribí un contrato Soroban en el track Event Pass: **Aex Prueba Pass Stellar 01**, un pase para entrar a un Meet.
 
 **0:25–0:55 · El contrato** (en pantalla: `lib.rs`)
 > Tiene dos funciones clave. `buy`: el asistente firma, paga 1 XLM al anfitrión y queda registrado con su pase. `check_in`: solo el anfitrión la firma, cuando admite a la persona en el Meet, y el pase pasa de comprado a usado. El link del Meet no está en el contrato, porque todo lo on-chain es público: el contrato solo prueba quién pagó y quién entró.
@@ -55,4 +55,4 @@ Resultados esperados, en orden: `"Aex Prueba Pass Stellar 01"` · `null` · éxi
 > En la transacción del `buy` se ve la transferencia de 1 XLM al anfitrión y el evento `bought`. En la del `check_in`, el evento `checked_in` con la address del asistente. Y en el storage del contrato, el pase de esta address queda en `Used`. Todo público y verificable.
 
 **2:25–3:00 · Qué sigo aprendiendo**
-> Lo siguiente es conectar este contrato a Pollar Pass, para que la puerta verifique los pases directamente en el ledger. Para eso tengo que profundizar en tres cosas: el TTL y la renta del storage, para que los pases no expiren antes del evento; tests más completos, como fuzzing, antes de mover dinero real; e invocar contratos desde el frontend con la wallet del usuario, sin CLI.
+> Lo siguiente es llevar este contrato a un producto real, para que la puerta de un evento verifique los pases directamente en el ledger. Para eso tengo que profundizar en tres cosas: el TTL y la renta del storage, para que los pases no expiren antes del evento; tests más completos, como fuzzing, antes de mover dinero real; e invocar contratos desde el frontend con la wallet del usuario, sin CLI.
