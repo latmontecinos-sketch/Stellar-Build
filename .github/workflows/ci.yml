@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  # Cada lunes, para enterarse si la fuente en aex-pass cambió sin actualizar la copia.
+  schedule:
+    - cron: "0 12 * * 1"
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # contracts/aex-prueba-pass-stellar-01 es una copia: la fuente es aex-pass.
+      - uses: actions/checkout@v4
+        with:
+          repository: latmontecinos-sketch/aex-pass
+          path: _aex-pass
+      - name: La copia de Aex Pass coincide con aex-pass
+        run: diff -r _aex-pass/src contracts/aex-prueba-pass-stellar-01/src
+      - uses: dtolnay/rust-toolchain@1.98.1
+        with:
+          targets: wasm32v1-none
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo test
